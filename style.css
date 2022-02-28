@@ -21,6 +21,7 @@ body{
     position: -webkit-sticky;
     top: 0;
     left: 0;
+    z-index: 100;
 }
 #search-btn{
     background-color: var(--primary);
@@ -29,7 +30,8 @@ body{
     font-weight: 600;
     transition: .3s ease-in-out;
 }
-#search-btn:hover{
+#search-btn:hover,
+#explore-btn:hover{
     background-color: var(--secondary);
 }
 input{
@@ -44,4 +46,10 @@ input:focus{
     border: 1px solid var(--primary);
     outline: none;
     border-right: none;
+}
+/* Main section/card section */
+#explore-btn{
+    background-color: var(--primary);
+    border: 1px solid var(--secondary);
+    padding: 5px 15px;
 }
