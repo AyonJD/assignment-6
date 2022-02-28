@@ -55,7 +55,15 @@ button.addEventListener('click', () => {
 });
 //Updating product by search result
 const updateBySearch = data => {
-    toDoData(data)
+    if (data.status) {
+        toDoData(data);
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Nothing found!'
+          })
+    }
 }
 //Showing details by clicking Explore button
 const explore = slugData => {
