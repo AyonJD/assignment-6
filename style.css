@@ -63,4 +63,6 @@ input:focus{
     left: 50%;
     z-index: 50;
     transform: translate(-50%, -50%);
+    background-color: #ff4800;
+    color: #FFF;
 }
