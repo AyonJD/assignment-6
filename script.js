@@ -14,8 +14,6 @@ const toDoData = data => {
     })
     //Getting the first 20 elements of the array
     const zeroToTwenty = arrayOfData.slice(0, 20);
-    // console.log(zeroToTwenty)
-
     //Showing 20 phones as default
     const cardParent = document.getElementById('card-parent');
     zeroToTwenty.forEach(e => {
@@ -152,7 +150,7 @@ function displayLoading() {
     // to stop loading after some time
     setTimeout(() => {
         loader.classList.add("d-none");
-    }, 5000);
+    }, 3000);
 }
 function hideLoading() {
     loader.classList.add("d-none");
