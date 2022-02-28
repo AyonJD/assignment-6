@@ -53,3 +53,6 @@ input:focus{
     border: 1px solid var(--secondary);
     padding: 5px 15px;
 }
+.image-full{
+    width: calc(100% - 20px);
+}
