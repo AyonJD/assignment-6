@@ -27,7 +27,9 @@
       <div class="container">
         <div class="row align-items-md-center justify-content-md-between py-1">
           <div class="col-12 col-md-5 text-center text-md-start">
-            <img class="width" src="./images/logo.png" alt="">
+            <a href="#">
+              <img id="imageBtn" class="width" src="./images/logo.png" alt="">
+            </a>
           </div>
           <div class="col-12 col-md-5 px-3 px-md-0">
             <div class="d-flex mx-auto w-full justify-content-center justify-content-md-end">
@@ -40,6 +42,11 @@
       </div>
     </header>
     <main>
+      <!-- Preloader -->
+        <button id="loader" class="btn btn-danger d-none" type="button" disabled>
+          <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          Loading...
+        </button>
       <!-- Product card start -->
       <div class="container mt-5">
         <div id="detail-parent" class="row">

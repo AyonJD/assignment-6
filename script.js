@@ -7,6 +7,7 @@ const fetchData = () => {
 fetchData();
 
 const toDoData = data => {
+    displayLoading()
     //Making an array of all the data
     const arrayOfData = data.data.map(e => {
         return e;
@@ -33,12 +34,18 @@ const toDoData = data => {
         `
         cardParent.appendChild(singleCard)
     })
+    hideLoading()
 }
 //Getting search input text
 
 //Making the search button clickable
 const button = document.getElementById('search-btn');
 button.addEventListener('click', () => {
+    commonForHome();
+});
+//Common function for Logo and Default products
+const commonForHome = () => {
+    displayLoading();
     const searchField = document.getElementById('input');
     const searchText = searchField.value;
     //Clearing previous search
@@ -52,7 +59,7 @@ button.addEventListener('click', () => {
     fetch(url)
         .then(res => res.json())
         .then(data => updateBySearch(data))
-});
+}
 //Updating product by search result
 const updateBySearch = data => {
     if (data.status) {
@@ -65,14 +72,19 @@ const updateBySearch = data => {
           })
     }
 }
+//Go back to home by clicking the image
+const imageBtn = document.getElementById('imageBtn');
+imageBtn.addEventListener('click', () => {
+    commonForHome();
+})
 //Showing details by clicking Explore button
 const explore = slugData => {
+    displayLoading();
     const url = `https://openapi.programming-hero.com/api/phone/${slugData}`
     fetch(url)
         .then(res => res.json())
         .then(data => exploreInner(data))
     const exploreInner = data => {
-        console.log(data.data)
         const detailParent = document.getElementById('detail-parent');
         detailParent.innerHTML = `
     <div class="card mb-3 p-4">
@@ -131,4 +143,18 @@ const explore = slugData => {
   </div>
     `
     }
+    hideLoading()
 }
+//Handling preloader
+const loader = document.getElementById('loader')
+function displayLoading() {
+    loader.classList.remove("d-none");
+    // to stop loading after some time
+    setTimeout(() => {
+        loader.classList.add("d-none");
+    }, 5000);
+}
+function hideLoading() {
+    loader.classList.add("d-none");
+}
+window.addEventListener('load', displayLoading())
