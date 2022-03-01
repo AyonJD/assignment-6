@@ -141,19 +141,19 @@ const explore = slugData => {
           <p class="card-text mb-0"><strong>Other Features:</strong></p>
           <hr class="w-25 mt-0 mb-1">
           ${
-            (data => data.data.others?.Bluetooth ? `<p class="card-text mb-0"><small class="text-muted"><strong>Bluetooth:</strong> &nbsp;${data.data.others.Bluetooth}</small></p>` : `<p class="card-text"><small class="text-muted">Bluetooth: No</small></p>`) (data)
+            (data => data.data.others?.Bluetooth ? `<p class="card-text mb-0"><small class="text-muted"><strong>Bluetooth:</strong> &nbsp;${data.data.others.Bluetooth}</small></p>` : `<p class="card-text mb-0"><small class="text-muted"><strong>Bluetooth:</strong> No</small></p>`) (data)
           }
           ${
-            (data => data.data.others?.NFC ? `<p class="card-text mb-0"><small class="text-muted"><strong>NFC:</strong> &nbsp;${data.data.others.NFC}</small></p>` : `<p class="card-text"><small class="text-muted">NFC: No</small></p>`) (data)
+            (data => data.data.others?.NFC ? `<p class="card-text mb-0"><small class="text-muted"><strong>NFC:</strong> &nbsp;${data.data.others.NFC}</small></p>` : `<p class="card-text mb-0"><small class="text-muted"><strong>NFC:</strong> No</small></p>`) (data)
           }
           ${
-            (data => data.data.others?.Radio ? `<p class="card-text mb-0"><small class="text-muted"><strong>Radio:</strong> &nbsp;${data.data.others.Radio}</small></p>` : `<p class="card-text"><small class="text-muted">Radio: Not Supported</small></p>`) (data)
+            (data => data.data.others?.Radio ? `<p class="card-text mb-0"><small class="text-muted"><strong>Radio:</strong> &nbsp;${data.data.others.Radio}</small></p>` : `<p class="card-text mb-0"><small class="text-muted"><strong>Radio:</strong> Not Supported</small></p>`) (data)
           }
           ${
-            (data => data.data.others?.USB ? `<p class="card-text mb-0"><small class="text-muted"><strong>USB:</strong> &nbsp;${data.data.others.USB}</small></p>` : `<p class="card-text"><small class="text-muted">USB: No</small></p>`) (data)
+            (data => data.data.others?.USB ? `<p class="card-text mb-0"><small class="text-muted"><strong>USB:</strong> &nbsp;${data.data.others.USB}</small></p>` : `<p class="card-text mb-0"><small class="text-muted"><strong>USB:</strong> No</small></p>`) (data)
           }
           ${
-            (data => data.data.others?.WLAN ? `<p class="card-text mb-0"><small class="text-muted"><strong>WALN:</strong> &nbsp;${data.data.others.WLAN}</small></p>` : `<p class="card-text"><small class="text-muted">WLAN: Not found</small></p>`) (data)
+            (data => data.data.others?.WLAN ? `<p class="card-text mb-0"><small class="text-muted"><strong>WALN:</strong> &nbsp;${data.data.others.WLAN}</small></p>` : `<p class="card-text mb-0"><small class="text-muted"><strong>WLAN:</strong> Not found</small></p>`) (data)
           }
         </div>
       </div>
