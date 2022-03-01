@@ -49,7 +49,10 @@ const commonForHome = () => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
-        .then(data => updateBySearch(data))
+      .then(data => {
+        updateBySearch(data);
+        coountSearchResult(data);
+        })
 }
 //Updating product by search result
 const updateBySearch = data => {
@@ -135,6 +138,15 @@ const explore = slugData => {
     }
     hideLoading()
 }
+//Counting search Result
+const coountSearchResult = data => {
+  const resultParent = document.getElementById('result-parent');
+  resultParent.innerHTML = `
+    ${
+      (data => data.data.length ? `<p class="py-1 px-3 my-0 text-white bg-success">${data.data.length} results found</p>` : `<p class="py-1 px-3 my-0 text-white bg-danger">${data.data.length} result found</p>`) (data)
+    }
+  `
+}
 //Handling preloader
 const loader = document.getElementById('loader')
 function displayLoading() {
@@ -142,7 +154,7 @@ function displayLoading() {
     // to stop loading after some time
     setTimeout(() => {
         loader.classList.add("d-none");
-    }, 3000);
+    }, 2500);
 }
 function hideLoading() {
     loader.classList.add("d-none");
