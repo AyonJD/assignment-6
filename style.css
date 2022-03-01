@@ -31,7 +31,8 @@ body{
     transition: .3s ease-in-out;
 }
 #search-btn:hover,
-#explore-btn:hover{
+#explore-btn:hover,
+#show-more:hover{
     background-color: var(--secondary);
 }
 input{
@@ -48,7 +49,8 @@ input:focus{
     border-right: none;
 }
 /* Main section/card section */
-#explore-btn{
+#explore-btn,
+#show-more{
     background-color: var(--primary);
     border: 1px solid var(--secondary);
     padding: 5px 15px;

@@ -8,8 +8,13 @@ const toDoData = data => {
     //Getting the first 20 elements of the array
     const zeroToTwenty = arrayOfData.slice(0, 20);
     //Showing 20 phones as default
-    const cardParent = document.getElementById('card-parent');
-    zeroToTwenty.forEach(e => {
+    showTotalData(zeroToTwenty);
+    hideLoading()
+}
+//Common function for updating total data faced....For first 20 + show more btn
+const showTotalData = array => {
+  const cardParent = document.getElementById('card-parent');
+    array.forEach(e => {
         // console.log(e.slug)
         const singleCard = document.createElement('div');
         singleCard.classList.add('col-12', 'col-md-4', 'pt-3')
@@ -25,7 +30,6 @@ const toDoData = data => {
         `
         cardParent.appendChild(singleCard)
     })
-    hideLoading()
 }
 
 //Making the search button clickable
@@ -49,11 +53,32 @@ const commonForHome = () => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
-      .then(data => {
+        .then(data => {
         updateBySearch(data);
         coountSearchResult(data);
+        updateByShowMore(data);
+        displayShowMore(data)
         })
 }
+//Displaying show more button if data is > 20
+const displayShowMore = data => {
+  // if data is more than 20 then display show more button else not
+  if (data.data.length > 20) {
+    const showMoreBtn = document.getElementById('show-more');
+    showMoreBtn.classList.remove('d-none')
+  }
+}
+// Updating total data by Show more button
+const updateByShowMore = data => {
+  const showMoreBtn = document.getElementById('show-more');
+  showMoreBtn.addEventListener('click', () => {
+    showTotalData(data.data);
+    //Hide Show more button after collapsing all data
+    const showMoreBtn = document.getElementById('show-more');
+    showMoreBtn.classList.add('d-none')
+})
+}
+
 //Updating product by search result
 const updateBySearch = data => {
     if (data.status) {
