@@ -92,10 +92,10 @@ const updateBySearch = data => {
     }
 }
 //Go back to home by clicking the image
-const imageBtn = document.getElementById('imageBtn');
-imageBtn.addEventListener('click', () => {
-    commonForHome();
-})
+// const imageBtn = document.getElementById('imageBtn');
+// imageBtn.addEventListener('click', () => {
+//     commonForHome();
+// })
 //Showing details by clicking Explore button
 const explore = slugData => {
     displayLoading();
